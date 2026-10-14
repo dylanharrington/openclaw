@@ -340,6 +340,7 @@ describe("GPT-Live sideband protocol", () => {
         content: [{ type: "input_text", text: expect.stringContaining("in your own words") }],
       });
       expect(JSON.stringify(ack)).not.toContain("Status:");
+      expect(JSON.stringify(ack)).toContain("may not be accepted yet");
     } finally {
       controller.stop(new Error("test complete"));
     }

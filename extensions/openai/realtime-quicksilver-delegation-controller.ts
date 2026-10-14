@@ -34,10 +34,10 @@ const CONSULT_FAILURE_TEXT =
 const NATURAL_DELEGATION_ACK_MESSAGE = [
   "Internal OpenClaw voice control note.",
   "Do not delegate this message or call any tools.",
-  "The request was handed to the agent and the answer is coming.",
+  "The request is being passed to the agent; it may not be accepted yet.",
   "Say one short, natural line in your own words, under about 8 words, that you are looking into it.",
   'Fit it to what the user asked, for example "One sec, checking the calendar". Vary the wording.',
-  "Do not guess or give any part of the answer.",
+  "Do not guess or give any part of the answer, and do not promise that an answer is coming.",
 ].join("\n");
 
 type PendingDelegation = {
