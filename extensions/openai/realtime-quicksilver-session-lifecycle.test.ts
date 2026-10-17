@@ -138,6 +138,9 @@ describe("GPT-Live browser session lifecycle", () => {
             "a delegation or task receipt is not evidence of progress",
           );
           expect(session.instructions).toContain(
+            "When the host explicitly requests a natural launch acknowledgment, keep it brief and provisional",
+          );
+          expect(session.instructions).toContain(
             "Current host-provided task receipts and control results are not new requests: speak them exactly as instructed, without delegating them",
           );
         } else {

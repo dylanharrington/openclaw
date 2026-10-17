@@ -30,14 +30,14 @@ import { isOpenAIGptLiveApiModel } from "./realtime-quicksilver.js";
 const WEBSOCKET_OPEN = 1;
 const CONSULT_FAILURE_TEXT =
   "The agent task failed. Tell the user it did not complete and offer to try again.";
-// A fixed spoken line on every delegation sounds robotic; let the voice model phrase it.
+// Keep the launch note in one append; it does not establish consultation admission.
 const NATURAL_DELEGATION_ACK_MESSAGE = [
   "Internal OpenClaw voice control note.",
-  "Do not delegate this message or call any tools.",
-  "The request is being passed to the agent; it may not be accepted yet.",
-  "Say one short, natural line in your own words, under about 8 words, that you are looking into it.",
-  'Fit it to what the user asked, for example "One sec, checking the calendar". Vary the wording.',
-  "Do not guess or give any part of the answer, and do not promise that an answer is coming.",
+  "Do not delegate this note or call tools.",
+  "The request may not be accepted yet.",
+  "Briefly acknowledge it in your own words and the user's language, under 8 words.",
+  "Fit the request; vary naturally and avoid repeating recent acknowledgments.",
+  "Do not claim acceptance or completion, guess an answer, or promise one.",
 ].join("\n");
 
 type PendingDelegation = {
