@@ -341,6 +341,7 @@ describe("GPT-Live sideband protocol", () => {
       });
       expect(JSON.stringify(ack)).not.toContain("Status:");
       expect(JSON.stringify(ack)).toContain("may not be accepted yet");
+      expect(JSON.stringify(ack)).toContain("avoid repeating recent acknowledgments");
     } finally {
       controller.stop(new Error("test complete"));
     }
